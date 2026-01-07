@@ -270,14 +270,15 @@ export const verificationOTP = async (req, res) => {
   try {
     const { otp, email } = req.body;
 
-    const normalizedEmail = email.trim().toLowerCase();
-
+    
     if (!otp || !email) {
       return res.status(400).json({
         success: false,
         message: "Email and OTP are required",
       });
     }
+    
+    const normalizedEmail = email.trim().toLowerCase();
 
     const user = await User.findOne({ email: normalizedEmail });
 

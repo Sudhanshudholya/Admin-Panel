@@ -9,6 +9,8 @@ import ForgotPassword from "../screens/ForgotPassword";
 import Navbar from "@/components/Navbar";
 import Auth from "@/components/Auth";
 import ResetPassword from "../screens/ResetPassword";
+import VerifyOtp from "../screens/VerifyOtp";
+// import VerifyOtp from "../screens/VerifyOtp";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/forgot-password",
     element: <ForgotPassword />,
+  },
+  {
+      path: "/verify-otp",
+      element: <VerifyOtp/>
   },
   {
     path: "/reset-password",

@@ -1,5 +1,5 @@
 import React from "react";
-import { Book, BookOpen, ChevronDown, LogOut, User } from "lucide-react";
+import { Book, BookA, BookOpen, ChevronDown, LogOut, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Outlet, useNavigate } from "react-router-dom";
 import {
@@ -103,7 +103,7 @@ const Navbar = () => {
                 </DropdownMenuItem>
 
                 <DropdownMenuItem onClick={() => navigate("/books")}>
-                  <Book className="h-4 w-4 mr-2" />
+                  <BookA className="h-4 w-4 mr-2" />
                   Book
                 </DropdownMenuItem>
 
