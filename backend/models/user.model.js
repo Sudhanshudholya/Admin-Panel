@@ -4,7 +4,6 @@ const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      required: true,
     },
     email: {
       type: String,
@@ -14,7 +13,12 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+    },
+    googleId:{
+      type: String,
+    },
+    avatar: {
+        type: String
     },
     isVerified: {
       type: Boolean,

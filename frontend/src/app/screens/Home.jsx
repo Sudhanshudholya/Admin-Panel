@@ -18,11 +18,11 @@ const Home = () => {
             <br /> <br /> <br />
 
             {/* Welcome */}
-            {/* {user && (
+            {user && (
               <h1 className="font-semibold text-lg sm:text-xl md:text-2xl text-gray-800">
                 Welcome {user.username}
               </h1>
-            )} */}
+            )}
 
             {/* Badge */}
             <Badge

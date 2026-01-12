@@ -1,7 +1,7 @@
 import React from "react";
-import { Book, BookA, BookOpen, ChevronDown, LogOut, User } from "lucide-react";
+import { BookA, BookOpen, LogOut, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -86,7 +86,7 @@ const Navbar = () => {
               <DropdownMenuTrigger asChild>
                 <Avatar className="cursor-pointer">
                   <AvatarImage
-                    src="https://github.com/shadcn.png"
+                    src={user.avatar}
                   />
                   <AvatarFallback>
                     {user.name?.charAt(0)?.toUpperCase()}

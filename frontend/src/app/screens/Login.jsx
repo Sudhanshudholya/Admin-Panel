@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../features/loginSlice";
 import { useDispatch } from "react-redux";
 import { setUser } from "../services/userSlice";
+import Google from "../../../public/googleLogo.png"
 
 export function Login() {
   const navigate = useNavigate();
@@ -147,6 +148,15 @@ export function Login() {
             ) : (
               "Login"
             )}
+          </Button>
+          <br /> <br />
+          <Button
+          onClick={()=>window.open("http://localhost:8000/auth/google", "_self")}
+          className="w-full"
+          variant="outline" 
+          >
+            <img src={Google} alt="" className="w-5"/>
+            Login with google
           </Button>
         </CardContent>
 

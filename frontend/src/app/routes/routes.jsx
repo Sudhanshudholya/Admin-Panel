@@ -10,16 +10,16 @@ import Navbar from "@/components/Navbar";
 import Auth from "@/components/Auth";
 import ResetPassword from "../screens/ResetPassword";
 import VerifyOtp from "../screens/VerifyOtp";
-// import VerifyOtp from "../screens/VerifyOtp";
+import AuthSuccess from "../screens/AuthSuccess";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-     <Auth>
+     <>
        <Navbar />
         <Home/>
-     </Auth>
+     </>
     ),
   },
   {
@@ -37,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/auth-success",
+    element: <AuthSuccess />,
   },
   {
     path: "/forgot-password",
