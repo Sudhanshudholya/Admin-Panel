@@ -192,7 +192,6 @@ export const loginUser = async (req, res) => {
       refreshToken,
     });
   } catch (error) {
-    console.log(error, "dj");
     return res.status(500).json({
       success: false,
       message: "Server error",

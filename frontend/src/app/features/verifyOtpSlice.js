@@ -4,7 +4,7 @@ export const verifyOtpSLice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
             verifyOtp: builder.mutation({
                 query: ({email, otp}) => ({
-                    url: '/verify-otp',
+                    url: '/user/verify-otp',
                     method: "POST",
                     body: {email, otp}
                 }),

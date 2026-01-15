@@ -23,19 +23,19 @@ const Navbar = () => {
   // ✅ Redux se user
   const user = useSelector((state) => state.user.user); // replace with Redux state
 
-  const [logout, {isLoading}] = useLogoutMutation()
+  const [logout, { isLoading }] = useLogoutMutation();
 
   const logoutHandler = async () => {
     try {
       await logout().unwrap();
       // dispatch any additional actions if needed
-      dispatch(clearUser())
-      toast.success("User logout successfully")
+      dispatch(clearUser());
+      toast.success("User logout successfully");
       navigate("/login");
-    }catch (error) {
+    } catch (error) {
       console.error("Logout failed:", error);
     }
-}
+  };
 
   return (
     <nav className="w-full h-16 bg-white border-b shadow-sm fixed top-0 left-0 z-50">
@@ -85,11 +85,14 @@ const Navbar = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Avatar className="cursor-pointer">
-                  <AvatarImage
-                    src={user.avatar}
-                  />
+                  {user.avatar && user.avatar.trim() !== "" ? (
+    <AvatarImage
+      src={user.avatar}
+      alt={user.name || user.username || "User"}
+    />
+  ) : null}
                   <AvatarFallback>
-                    {user.name?.charAt(0)?.toUpperCase()}
+                    {(user.name || user.username || user.email)?.charAt(0)?.toUpperCase()}
                   </AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>
@@ -110,12 +113,12 @@ const Navbar = () => {
                 <DropdownMenuSeparator />
 
                 <DropdownMenuItem
-                    onClick={logoutHandler}
+                  onClick={logoutHandler}
                   className="text-red-600"
-                    disabled={isLoading}
+                  disabled={isLoading}
                 >
                   <LogOut className="h-4 w-4 mr-2 " />
-                 {isLoading ? "Logging out..." : "Logout"}
+                  {isLoading ? "Logging out..." : "Logout"}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

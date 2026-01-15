@@ -4,7 +4,7 @@ export const logoutSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
          logout: builder.mutation({
               query: () => ({
-                url: "/logout",
+                url: "/user/logout",
                 method: "POST"
               }),
               invalidatesTags: ["User"]
