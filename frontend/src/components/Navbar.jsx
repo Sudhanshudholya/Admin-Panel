@@ -86,13 +86,15 @@ const Navbar = () => {
               <DropdownMenuTrigger asChild>
                 <Avatar className="cursor-pointer">
                   {user.avatar && user.avatar.trim() !== "" ? (
-    <AvatarImage
-      src={user.avatar}
-      alt={user.name || user.username || "User"}
-    />
-  ) : null}
+                    <AvatarImage
+                      src={user.avatar}
+                      alt={user.name || user.username || "User"}
+                    />
+                  ) : null}
                   <AvatarFallback>
-                    {(user.name || user.username || user.email)?.charAt(0)?.toUpperCase()}
+                    {(user.name || user.username || user.email)
+                      ?.charAt(0)
+                      ?.toUpperCase()}
                   </AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>
